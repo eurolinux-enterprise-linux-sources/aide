@@ -4,7 +4,7 @@
 Summary: Intrusion detection environment
 Name: aide
 Version: 0.14
-Release: 8%{?dist}
+Release: 11%{?dist}
 URL: http://sourceforge.net/projects/aide
 License: GPLv2+
 Group: Applications/System
@@ -23,6 +23,7 @@ Patch7: aide-0.14-fipsfix.patch
 Patch8: aide-0.14-prelinkwarn.patch
 Patch9: aide-0.14-reportattrsegv.patch
 Patch10: aide-0.14-parse_whitespaces.patch
+Patch11: aide-0.14-syslog-format.patch
 
 Buildroot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot-%(%{__id_u} -n)
 BuildRequires: mktemp 
@@ -53,6 +54,7 @@ checker and intrusion detection program.
 %patch8 -p1
 %patch9 -p1
 %patch10 -p1
+%patch11 -p1
 
 %build
 %configure --with-config_file=%{_sysconfdir}/aide.conf \
@@ -95,6 +97,19 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Wed Dec 7 2016 Radovan Sroka <rsroka@redhat.com> - 0.14-11
+- fixed syslog format, doesn't provide print added/removed files
+  Resolves: rhbz#1305046
+
+* Mon Oct 17 2016 Tomas Sykora <tosykora@redhat.com> - 0.14-10
+ - fixed compiler warnings showed in coverity scan
+ Resolves: rhbz#1305046
+
+* Fri Oct 07 2016 Tomas Sykora <tosykora@redhat.com> - 0.14-9
+ - RHEL-6.9 erratum
+   - Fix aide logs with remote rsyslog causing unexpected results
+   Resolves: rhbz#1305046
+ 
 *Mon Jan 18 2016 Radovan Sroka <rsroka@redhat.com> - 0.14-8
 resolves: #1180435 - aide can not handle directory name with spaces
 
