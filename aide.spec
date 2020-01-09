@@ -4,7 +4,7 @@
 Summary: Intrusion detection environment
 Name: aide
 Version: 0.14
-Release: 7%{?dist}
+Release: 8%{?dist}
 URL: http://sourceforge.net/projects/aide
 License: GPLv2+
 Group: Applications/System
@@ -22,6 +22,7 @@ Patch6: aide-0.14-other-fixes.patch
 Patch7: aide-0.14-fipsfix.patch
 Patch8: aide-0.14-prelinkwarn.patch
 Patch9: aide-0.14-reportattrsegv.patch
+Patch10: aide-0.14-parse_whitespaces.patch
 
 Buildroot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot-%(%{__id_u} -n)
 BuildRequires: mktemp 
@@ -51,6 +52,7 @@ checker and intrusion detection program.
 %patch7 -p1
 %patch8 -p1
 %patch9 -p1
+%patch10 -p1
 
 %build
 %configure --with-config_file=%{_sysconfdir}/aide.conf \
@@ -93,6 +95,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+*Mon Jan 18 2016 Radovan Sroka <rsroka@redhat.com> - 0.14-8
+resolves: #1180435 - aide can not handle directory name with spaces
+
 * Wed Jul 16 2014 Daniel Kopecek <dkopecek@redhat.com> - 0.14-7
 Corrected bogus dates in spec file changelog entries
 
