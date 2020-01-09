@@ -1,0 +1,545 @@
+2010-03-16	Richard van den Berg  <richard@vdberg.org>
+	* Released version 0.14
+
+2010-02-26	Richard van den Berg  <richard@vdberg.org>
+	* Changed version to post-0.14-rc3
+	* Fixed some AC_ARG_WITH magic
+	* Define ENOATTR if needed by Hannes von Haugwitz <hannes@vonhaugwitz.com>
+
+2010-02-25	Richard van den Berg  <richard@vdberg.org>
+	* Released version 0.14-rc2
+	* Fix xattrs and selinux bits by Hannes von Haugwitz <hannes@vonhaugwitz.com>
+	* Released version 0.14-rc3
+
+2010-02-25	Steve Grubb <sgrubb@redhat.com>
+	* Additional checks for snprintf.c
+	* Fix off64_t and other size warnings
+	* Correct linker settings
+
+2010-02-24	Richard van den Berg  <richard@vdberg.org>
+	* Re-enable large file support on 32 bit systems by Steve Grubb <sgrubb@redhat.com>
+
+2010-02-23	Richard van den Berg  <richard@vdberg.org>
+	* Show -D in --help by Steve Grubb <sgrubb@redhat.com>
+	* Refix line->attr&DB_LINKNAME is always true issue by Hannes von Haugwitz <hannes@vonhaugwitz.com>
+
+2010-02-22	Richard van den Berg  <richard@vdberg.org>
+	* Released version 0.14-rc1
+	* Changed version to post-0.14-rc1
+
+2010-02-21	Richard van den Berg  <richard@vdberg.org>
+	* Replaced snprintf.c with the version from rsync-2.6.9
+
+2010-02-21	Hannes von Haugwitz <hannes@vonhaugwitz.com>
+	* Fix checksums letter
+	* Always save the permission to database
+	* summarize_changes: Re-enabled file-type detection for removed files
+	* Fix line->attr&DB_LINKNAME is always true issue
+	* Remove localignorelist for changed nodes
+	* Disable DB_ACL bit if acls are not supported
+
+2010-02-18	Richard van den Berg  <richard@vdberg.org>
+	* Adjust building of fopen.c by Steve Grubb <sgrubb@redhat.com>
+	* Fix error handling for prelink by Steve Grubb <sgrubb@redhat.com>
+
+2010-02-17	Richard van den Berg  <richard@vdberg.org>
+	* Fix several warnings by Steve Grubb <sgrubb@redhat.com>
+	* Check LD in configure by Steve Grubb <sgrubb@redhat.com>
+	* Fix xattrs typos by Hannes von Haugwitz <hannes@vonhaugwitz.com>
+	* Reworked summarize_changes option by Hannes von Haugwitz <hannes@vonhaugwitz.com>
+
+2010-02-13	Richard van den Berg  <richard@vdberg.org>
+	* Added autoconf patch from Steve Grubb <sgrubb@redhat.com>
+	* Removed AM_PROG_LIBTOOL from configure.in
+
+2010-02-06	Hannes von Haugwitz <hannes@vonhaugwitz.com>
+	* Fixed wrong char array size
+
+2010-02-01	Hannes von Haugwitz <hannes@vonhaugwitz.com>
+	* Added new option to summarize changes in output file
+
+2009-05-15	Richard van den Berg  <richard@vdberg.org>
+	* Prelink patch by Peter Vrabec <pvrabec@redhat.com>
+
+2007-12-20	Richard van den Berg  <richard@vdberg.org>
+	* Fix equals matches, patch by Brian De Wolf <bldewolf@csupomona.edu>
+
+2007-08-22	Richard van den Berg  <richard@vdberg.org>
+	* Turn CR/LF into LF, patch by Steve Conklin <sconklin@redhat.com>
+
+2007-06-05	Richard van den Berg  <richard@vdberg.org>
+	* Display complete selinux context, patch by Steve Conklin <sconklin@redhat.com>
+
+2007-05-15	Richard van den Berg  <richard@vdberg.org>
+	* Quit autogen.sh if required tools are not found
+
+2007-04-27	Richard van den Berg  <richard@vdberg.org>
+	* Only use optional groups in "make check" when enabled
+	* Prevent segfaults in db_write_byte_base64, patch from James Antill
+	* Fix aide.spec, patch by George Hansper <georgeh@anstat.com.au>
+
+2006-12-19	Richard van den Berg  <richard@vdberg.org>
+	* Do not warn about files not being directories
+
+2006-12-15	Richard van den Berg  <richard@vdberg.org>
+	* Released version 0.13.1
+	* Changed version to post-0.13.1
+
+2006-12-14	Richard van den Berg  <richard@vdberg.org>
+	* Use lseek() instead of fseek() on aide.db
+
+2006-12-13	Richard van den Berg  <richard@vdberg.org>
+	* Work around for error while reading gzipped aide.db files
+
+2006-12-08	Richard van den Berg  <richard@vdberg.org>
+	* Removed ustat dead code
+
+2006-12-07	Richard van den Berg  <richard@vdberg.org>
+	* Released version 0.13
+	* Changed version to post-0.13
+
+2006-11-30	Richard van den Berg  <richard@vdberg.org>
+	* Set meaningful exitcodes when --check is used (Pablo Virolainen)
+
+2006-11-29	Richard van den Berg  <richard@vdberg.org>
+	* Changed version to post-0.13-rc2
+	* Check for WHIRLPOOL so old mhash can be used (Pablo Virolainen)
+
+2006-11-25	Richard van den Berg  <richard@vdberg.org>
+	* Fix error message about HAVAL and CRC32 with --update and gcrypt
+	* Fix --with and --without logic of configure
+	* Make --without switches of configure work
+	* Released version 0.13-rc2
+
+2006-11-24	Richard van den Berg  <richard@vdberg.org>
+	* Remove stpcpy declaration because it is not defined in util.c
+	* Fix segfault when line->cntx is NULL
+	* Add --without-mhash to configure
+	* Don't use DB_SELINUX and DB_XATTR when not present
+	* Fix use of libgcrypt
+	* Add new group 'l' to detect changed link name
+	* Update documentation with new groups
+	* Supply strnlen in utils.c
+	* Released version 0.13-rc1
+
+2006-11-15	Richard van den Berg  <richard@vdberg.org>
+	* Fix syslog URLs (Yves Mettier <ymettier@libertysurf.fr>)
+
+2006-10-30	Richard van den Berg  <richard@vdberg.org>
+	* Make --with-selinux work without pkg-config
+
+2006-10-27	Richard van den Berg  <richard@vdberg.org>
+	* Added "Add xattr support" patch from James Antill <james-aide-38mkm@and.org>
+	* Added "report miscompares to Linux Audit System" patch from James Antill
+	* Added "Allow building without mhash library" patch from James Antill
+	* Added "correct db_names" patch from Steve Grubb <sgrubb@redhat.com>
+	* Added "memory leaks and performance updates" patch from Steve Grubb
+	* Added "deadcode removal" patch from Steve Grubb <sgrubb@redhat.com>
+	* Added "change K&R functions to void functions" patch from Steve Grubb
+	* Added "Memleak fix for ACLs, SELinux, XAttr" patch from James Antill
+
+2006-10-10	Richard van den Berg  <richard@vdberg.org>
+	* Added note about rpl_malloc on AIX 5.3 with mhash
+	* Include version.m4 in distribution tar file
+	* No need for absolute $(srcdir) in configure
+	* Use AC_CONFIG_FILES(files..) instead of AC_OUTPUT(files..)
+	* Removed redundant targets from Makefile.am
+
+2006-10-06	Richard van den Berg  <richard@vdberg.org>
+	* Changed version to post-0.12
+	* Added file locking for output files
+
+2006-10-05	Richard van den Berg  <richard@vdberg.org>
+	* Released version 0.12
+
+2006-10-04	Richard van den Berg  <richard@vdberg.org>
+	* Close database files earlier
+	* Released version 0.12-rc2
+
+2006-09-24	Richard van den Berg  <richard@vdberg.org>
+	* Fixed filesize stored in postgres (SF bug #1177758)
+
+2006-07-15	Richard van den Berg  <richard@vdberg.org>
+	* Released version 0.12-rc1
+	* Remove the use of NODE_ADD_CHILDREN, hopefully it is no longer needed
+	* Added syntax changed from 10-manpages.dpatch
+	* Added newlines as per SF bug #1461182
+	* Added report_attributes group (Pablo Virolainen)
+
+2006-06-13	Richard van den Berg  <richard@vdberg.org>
+	* Fix stat type in report_tree() (Heiko Lehmann <hlehmann@fh-lausitz.de>)
+
+2006-05-31	Richard van den Berg  <richard@vdberg.org>
+	* Added support for posix_fadvice() (Pablo Virolainen)
+
+2006-04-22	Richard van den Berg  <richard@vdberg.org>
+	* Fix seg faults on OpenBSD (Axel Rau <Axel.Rau@Chaos1.DE>)
+
+2006-04-22	Richard van den Berg  <richard@vdberg.org>
+	* Fix mmap on HPUX (fredrik@soderblom.org patch 1474555)
+
+2006-03-31	Richard van den Berg  <richard@vdberg.org>
+	* Abort if aide.db does not have checksum when FORCEDBMD is used
+	* Explain aide.conf and aide.db signing
+
+2006-03-29	Richard van den Berg  <richard@vdberg.org>
+	* Add spaces to error messages (Marc Haber)
+	* Don't warn about rules referring to non-existent directories by default
+
+2006-03-25	Richard van den Berg  <richard@vdberg.org>
+	* Allow aide.db to be supplied on stdin (Pablo Virolainen)
+	* Add patch to allow http/https/ftp URLs through libcurl (Pablo Virolainen)
+
+2006-03-17	Richard van den Berg  <richard@vdberg.org>
+	* Use system strnstr when available
+	* Add --disable-static flag to configure
+
+2006-03-13	Richard van den Berg  <richard@vdberg.org>
+	* Applied manual patch from Marc Haber
+	* Added note about problems with mhash 0.9.x
+
+2006-03-12	Richard van den Berg  <richard@vdberg.org>
+	* Mordernize use of AM_INIT_AUTOMAKE
+	* Use AIDEVERSION to avoid clash with VERSION of other packages
+
+2006-02-26	Richard van den Berg  <richard@vdberg.org>
+	* Use @sysconfdir@ as directory in aide.1, SF bug #1438995
+
+2006-02-23	Richard van den Berg  <richard@vdberg.org>
+	* Set AIDEVERSION right after including config.h
+	* Added note about SIGTERM (Marc Haber)
+
+2006-02-18	Richard van den Berg  <richard@vdberg.org>
+	* Released version 0.11
+	* Changed version to post-0.11
+
+2006-02-14	Richard van den Berg  <richard@vdberg.org>
+	* Fix the broken @@ifhost and @@ifnhost directives by lcn2 (SF bug #1430482)
+
+2006-02-09	Richard van den Berg  <richard@vdberg.org>
+	* Fall back to strtoimax if strtoll is not available
+	* Protect against non existing syslog facilities
+	* Updated aide.spec.in as suggested in SF bug #1428576
+
+2006-02-08	Richard van den Berg  <richard@vdberg.org>
+	* Explicitly check for readdir64, by Virolainen Pablo <pablo@cs.tut.fi>
+	* Added note about --disable-lfs in README
+
+2006-01-30	Richard van den Berg  <richard@vdberg.org>
+	* Released version 0.11-rc3
+	* Changed version to post-0.11-rc3
+
+2006-01-29	Richard van den Berg  <richard@vdberg.org>
+	* Fix layout of aide.conf.5 by Vincent Danen <vdanen@linsec.ca>
+	* Cleanup --help output by Vincent Danen <vdanen@linsec.ca>
+	* Add separators in --check output by Vincent Danen <vdanen@linsec.ca>
+	* Add --disable-lfs option to configure
+
+2006-01-22	Richard van den Berg  <richard@vdberg.org>
+	* Allow report_url to change syslog facility
+	* Only warn when DB_CHECKINODE and DB_CTIME are used together
+	* Added GPG scripts by Vincent Danen <vdanen@linsec.ca>
+
+2005-12-19	Richard van den Berg  <richard@vdberg.org>
+	* Revert check_list_for_match to old behaviour (Marc Haber)
+	* Documentation update (Marc Haber)
+
+2005-12-12	Richard van den Berg  <richard@vdberg.org>
+	* Log tree matching verbosely, patch by Virolainen Pablo <pablo@cs.tut.fi>
+
+2005-11-15	Richard van den Berg  <richard@vdberg.org>
+	* Applied 'allow removed files' patch by Virolainen Pablo <pablo@cs.tut.fi>
+
+2005-11-13	Richard van den Berg  <richard@vdberg.org>
+	* Applied fix to ANF by Virolainen Pablo <pablo@cs.tut.fi>
+
+2005-11-07	Richard van den Berg  <richard@vdberg.org>
+	* Applied 'allow new files' patch by Virolainen Pablo <pablo@cs.tut.fi>
+
+2005-11-03	Richard van den Berg  <richard@vdberg.org>
+	* Remove russian translations; they are out of date and there is no static version of gettext available
+	* Do not stop parsing directory at unescaped .
+	* Fix "make dist" and "make check"
+	* Added gpg scripts to contrib
+	* Released version 0.11-rc2
+	* Changed version to post-0.11-rc2
+
+2005-10-30	Richard van den Berg  <richard@vdberg.org>
+	* Warn if 'I' and 'c' are used together
+
+2005-10-28	Richard van den Berg  <richard@vdberg.org>
+	* Ignore 'c' when 'I' is in effect
+	* Mention in aide.conf.5 that 'c' and 'I' are incompatible
+
+2005-10-26	Richard van den Berg  <richard@vdberg.org>
+	* Check for ino64_t and dirent64 separately since HPUX does not have them
+
+2005-10-25	Richard van den Berg  <richard@vdberg.org>
+	* Print start and stop timestamp together (Marc Haber <mh+aide@zugschlus.de>)
+	* Print database_out path with -i and -u
+	* Added bzip2.sh to the contrib directory
+
+2005-10-19	Richard van den Berg  <richard@vdberg.org>
+	* Applied patch from Debian bug #121717: aide spelling fixes
+
+2005-10-16	Richard van den Berg  <richard@vdberg.org>
+	* Applied patch 1124758: fix underquoted m4
+	* Applied patch 1124757: dist-hook missing file snprintf.h
+	* Applied patch 1124760: cleaner automake initialisation
+	* Applied patch 1124782: gettextize related patch
+
+2005-10-07	Richard van den Berg  <richard@vdberg.org>
+	* If open() with NO_ATIME fails, try open() again without it
+
+2005-10-05	Richard van den Berg  <richard@vdberg.org>
+	* Compile aide as a static executable
+	* Fixed some spelling errors caught by Marc Haber <mh+aide@zugschlus.de>
+	* Changed version to Post 0.11-rc1
+	* Ignore special characters after backslash in directory names (bug #1162575)
+
+2005-10-04	Richard van den Berg  <richard@vdberg.org>
+	* Released aide 0.11-rc1
+
+2005-09-14	Richard van den Berg  <richard@vdberg.org>
+	* Print detailed error message when mmap() returns MAP_FAILED
+
+2005-09-02	Richard van den Berg  <richard@vdberg.org>
+	* Added patch for cygwin compatibility as per bug #1279818
+
+2005-08-10	Richard van den Berg  <richard@vdberg.org>
+	* Open files with O_NOATIME on Linux (per Vlada Macek <tuttle@bbs.cvut.cz>)
+
+2005-08-08	Richard van den Berg  <richard@vdberg.org>
+	* Reset fs.st_rdev in 2 additional places as per bug #1253822
+
+2005-06-30	Richard van den Berg  <richard@vdberg.org>
+	* Removed return in conf_lex.l that caused --after to be ignored
+
+2005-06-12	Richard van den Berg  <richard@vdberg.org>
+	* Applied another aide.1.in from Sven Hoexter <sven@timegate.de>
+
+2005-06-11	Richard van den Berg  <richard@vdberg.org>
+	* Applied aide.1.in patch from SF bug #1217483
+
+2005-04-28	Richard van den Berg  <richard@vdberg.org>
+	* Added long long support for portable snprintf
+	* Created aide.conf.5.in and aide.conf.5.ru.in as per bug #1103719
+
+2005-04-27	Richard van den Berg  <richard@vdberg.org>
+	* Fixed sshaide.sh as suggested in bug #1100740
+	* Removed db_writeacl() from db_disk.c as suggested in bug #1143889
+	* Set st_rdev to 0 when not used as suggested in bug #1169697
+
+2005-04-18	Richard van den Berg  <richard@vdberg.org>
+	* Correctly parse multiple backslashes in file names
+
+2005-04-08	Richard van den Berg  <richard@vdberg.org>
+	* Use configure to define type for storage of file size in aide.db
+	* Applied fix suggested in Debian Bug #237969
+
+2005-04-06	Richard van den Berg  <richard@vdberg.org>
+	* Always include aide.h before any other include file
+	* Include aide.h instead of config.h to avoid multiple inclusions
+	* Fixed large file under Solaris
+	* Make large file support generic (not just for Solaris)
+
+2005-04-05	Richard van den Berg  <richard@vdberg.org>
+	* Fixed bug where shrinking files with S set where not detected
+
+2005-02-20	Richard van den Berg  <richard@vdberg.org>
+	* Removed extra gen_tree() as suggested in patch 985632
+	* Allow escaping of spaces in filenames (Virolainen Pablo <pablo@cs.tut.fi>)
+	* Allow @@{HOSTNAME} usage in aide.conf (Virolainen Pablo <pablo@cs.tut.fi>)
+
+2004-11-16  Richard van den Berg  <richard@vdberg.org>
+	* Applied patch 984424: bug fix for "--check recurses when it shouldn't"
+	* Applied patch 853842: sshaide - contributed script
+
+2004-11-12  Richard van den Berg  <richard@vdberg.org>
+	* Fixed patch from Virolainen Pablo
+	* Applied patch id 931224: Ignoring moved files
+
+2004-11-05  Richard van den Berg  <richard@vdberg.org>
+	* Applied patch from Virolainen Pablo to give more infomation when file attributes have changed before calculating the hash
+
+2004-11-04  Richard van den Berg  <richard@vdberg.org>
+	* Make sure readdir_r is POSIX compliant before we use it
+
+2004-11-03  Richard van den Berg  <richard@vdberg.org>
+	* Applied patch 1058973: Please don't add -I$(prefix)/include
+	* Fixed bug 836253: Manual is wrong about --check command
+	* Applied fix in config parser to avoid 10000 line limit
+
+2004-11-02  Richard van den Berg  <richard@vdberg.org>
+	* Fixed various documentation bugs filed as sf.net
+
+2004-10-29  Richard van den Berg  <richard@vdberg.org>
+	* Use syslog() for systems that do not have vsyslog()
+	* Fixed file system traversing bug for systems without readdir_r
+	* Fixed bug 836257: Line numbers in verbose output off by one
+
+2004-10-28  Richard van den Berg  <richard@vdberg.org>
+	* Removed config.h.in
+	* Added ISO C99 compliant snprintf for systems that do not have it
+
+2004-10-26  Richard van den Berg  <richard@vdberg.org>
+	* Added check for ISO C99 compliant vsnprintf to configure.in
+
+2004-10-23  Richard van den Berg  <richard@vdberg.org>
+	* Applied PSQL patch from Marc Giger <gigerstyle@gmx.ch>
+	* Set version to "Post 0.10"
+	* Removed aide.1 and aide.1.ru since they are created by configure
+	* Moved #endif for WITH_MHASH in commandconf.c thanks to berkeley@octagon.com.au
+
+2003-12-08  Richard van den Berg  <richard@vdberg.org>
+	* Applied patch 853842 "sshaide - contributed script"
+	* Applied patch 855639 "Updated README file"
+
+2003-12-02  Richard van den Berg  <richard@vdberg.org>
+	* Fixed bug 851671 Aide-0.10 --config-check dumps core
+
+2003-11-28  Richard van den Berg  <richard@vdberg.org>
+	* Released aide version 0.10
+	* Applied patch 849857 "cosmetic report fix" thanks to John Kristoff
+
+2003-11-25  Mike Markley  <mike@markley.org>
+	* Applied patch from bug 848664 "crash in db_input_wrapper (gzip)" thanks to Matt Kettler
+
+2003-11-04  Richard van den Berg  <richard@vdberg.org>
+
+	* Fixed typo in compare_db.c, closes bug 836255 thanks to Michael Schwendt
+	* Applied patch 801860, fixes bug 801857 "=/$ gives segfault" thanks to Michael Schwendt
+	* Applied patch 803001 "Fix for some memory leaks" thanks to Michael Schwendt
+	* Applied patch 801853 "getopt optstring is wrong" thanks to Michael Schwendt
+
+2003-10-03  Richard van den Berg  <richard@vdberg.org>
+
+	* Moved project over to http://sf.net/projects/aide
+	* Fixed problems in conf_yacc.y
+	* Gzip code now uses best (-9) compression
+
+2002-07-22  Rami Lehti  <Rami.Lehti@Finland.Sun.COM>
+
+	* Fixed Unimplemented error message when conf md not compiled in
+	* Fixed error message about nonexistant files.
+	* Fixed --with-extra-includes --with-extra-libs handling (I hope)
+	* Fixed *stat handling
+
+2002-06-04  Rami Lehti  <Rami.Lehti@Finland.Sun.COM>
+
+	* Released 0.9
+
+2002-05-31  Rami Lehti  <Rami.Lehti@Finland.Sun.COM>
+
+	* Fixed a bug in memory handling causing corrupt md's
+	* Added --without-mmap configure option
+
+2002-05-29  Rami Lehti  <Rami.Lehti@Finland.Sun.COM>
+
+	* Updated version to 0.9
+	* Fixed loads of bugs
+	* This file should be updated more often
+	* Added support for md checked config and db
+	* Updated Copyright notices
+	* Changed checking algorithm (threading here we come)
+
+2002-02-10 Rami Lehti <Rami.Lehti@Finland.Sun.COM>
+	* Fixed loads and loads of bugs
+	* Added syslog backend
+	* Report format changed
+	* added lots of parameters see man page and configure --help
+	* added ACL support for SunOS 5.x (and compatibles)
+	* Released 0.8 (This is an unstable release)
+	
+2000-04-27  Rami Lehti  <Rami.Lehti@Finland.Sun.COM>
+
+	* Added static link flag checking
+	* Released 0.7
+
+2000-04-13  Rami Lehti  <Rami.Lehti@Finland.Sun.COM>
+
+	* Added linkname checking
+	* Removed mhash snefru and fixed haval
+	* Mhash 0.8.1 required.
+
+2000-02-08  Rami Lehti  <Rami.Lehti@Finland.Sun.COM>
+	* Changed version to 0.7
+	
+2000-02-08  Rami Lehti  <Rami.Lehti@Finland.Sun.COM>
+
+	* Fixed core dump bug in compare_db 
+	* Added warning when config has changed 
+	* Released 0.6
+	
+2000-01-18  Virolainen Pablo  <pablo@kaspiankerttu.cs.tut.fi>
+
+	* Handles config filename '-' as stdin. Manpage update.
+
+1999-12-30  Rami Lehti  <rammer@cs.tut.fi>
+
+	* Fixed compilation problem with glibc 2.1
+
+1999-12-29  Rami Lehti  <Rami.Lehti@Finland.Sun.COM>
+
+	* Finally fixed wrong md5 sums.
+	* Fixed nonprintable filename encoding.
+	* Fixed a huge memory leak. 16k per databaseline.
+
+1999-12-08  Pablo Virolainen <pablo@cs.tut.fi>
+	* Check for [acm]times beeing in future is done correctly now.
+	* blockcount will now be writen to database...
+	
+1999-12-02  Pablo Virolainen <pablo@cs.tut.fi>
+	* Added warning if file's [acm]time is in future (gen_list.c)
+
+1999-11-25  Rami Lehti  <Rami.Lehti@Finland.Sun.COM>
+
+	* Added support for unknown @@ tokens in databases
+
+1999-11-25  Pablo Virolainen <pablo@cs.tut.fi>
+	* Ignorelist for reports implemented.
+	* Block count added. It might be usefull with file with holes.
+	
+1999-11-24  Pablo Virolainen <pablo@cs.tut.fi>
+	* Added '^' to first charaster of every regexpr
+	* Minor changes do_md.c
+	
+1999-11-23  Rami Lehti  <Rami.Lehti@Finland.Sun.COM>
+
+	* Fixed MHASH_COMPATIBILITY problem. Mhash library version 0.6.1 is
+	  now required.
+	* Began tidying up the code so that both the internal and mhash
+	  hashes can be used at the same time.
+
+1999-11-05  Pablo Virolainen  <pablo@cs.tut.fi>
+
+	* Fixed bug in tree traverce. Now works without permission check.
+	
+1999-10-26  Rami Lehti  <rammer@cs.tut.fi>
+
+	* Added support for mhash library (done mostly by pablo)
+	* Fixed a --with-config-file bug in configure.in
+	* Fixed md bug when using internal functions
+	* Finally updated the Changelog
+
+1999-08-26  Rami Lehti  <rami@leevi.ton.tut.fi>
+
+	* Fixed config file handling
+
+(Wed, 25 Aug 1999 11:03:34  (EET):rammer)
+Changed: ChangeLog,configure.in
+	Upped version to 0.4
+
+(Thu, 26 Aug 1999 16:36:14  (EET):rammer)
+Changed: configure aide.conf.5 compare_db.c,gen_list.c,util.c 
+	util.h,conf_lex.l
+	Fixed a bug in gen_seltree
+	Changed default behaviour of verbositylevel 5.
+	Now it prints the detailed info about changed files too.
+	Now on level 5 if a dir is added a warning is shown that
+	foo files were added under the previous dir and not the files
+	themselves. On level 20 the behaviour is still the same.
+
+---------------------
+
+
