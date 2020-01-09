@@ -4,7 +4,7 @@
 Summary: Intrusion detection environment
 Name: aide
 Version: 0.14
-Release: 3%{?dist}
+Release: 3%{?dist}.2
 URL: http://sourceforge.net/projects/aide
 License: GPLv2+
 Group: Applications/System
@@ -19,10 +19,13 @@ Patch3: aide-0.14-abort.patch
 Patch4: aide-0.14-selinux.patch
 Patch5: aide-0.14-perms.patch
 Patch6: aide-0.14-other-fixes.patch
+Patch7: aide-0.14-fipsfix.patch
+
 Buildroot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot-%(%{__id_u} -n)
 BuildRequires: mktemp 
 BuildRequires: prelink elfutils-libelf-devel
-Buildrequires: zlib-devel libgcrypt-devel
+Buildrequires: zlib-devel
+Buildrequires: libgcrypt-devel >= 1.4.5-9.el6_2.1
 Buildrequires: flex bison
 Buildrequires: libattr-devel libacl-devel libselinux-devel
 Buildrequires: audit-libs-devel >= 1.2.8-2
@@ -43,6 +46,7 @@ checker and intrusion detection program.
 %patch4 -p1
 %patch5 -p1
 %patch6 -p1
+%patch7 -p1
 
 %build
 %configure --with-config_file=%{_sysconfdir}/aide.conf \
@@ -85,6 +89,15 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Tue Apr 17 2012 Daniel Kopecek <dkopecek@redhat.com> - 0.14-3.2
+- corrected z-stream versioning
+
+* Mon Apr 16 2012 Daniel Kopecek <dkopecek@redhat.com> - 0.14-3.1
+- corrected BuildRequires
+
+* Fri Apr 13 2012 Daniel Kopecek <dkopecek@redhat.com> - 0.14-3
+resolves: #811929 aide doesn't initialize its database when FIPS is enabled
+
 * Tue May 18 2010 Steve Grubb <sgrubb@redhat.com> - 0.14-3
 resolves: #590561 aide does not detect the change of SElinux context
 resolves: #590566 aide reports a changed file when it has not been changed
