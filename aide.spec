@@ -4,7 +4,7 @@
 Summary: Intrusion detection environment
 Name: aide
 Version: 0.14
-Release: 3%{?dist}.2
+Release: 7%{?dist}
 URL: http://sourceforge.net/projects/aide
 License: GPLv2+
 Group: Applications/System
@@ -20,12 +20,14 @@ Patch4: aide-0.14-selinux.patch
 Patch5: aide-0.14-perms.patch
 Patch6: aide-0.14-other-fixes.patch
 Patch7: aide-0.14-fipsfix.patch
+Patch8: aide-0.14-prelinkwarn.patch
+Patch9: aide-0.14-reportattrsegv.patch
 
 Buildroot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot-%(%{__id_u} -n)
 BuildRequires: mktemp 
 BuildRequires: prelink elfutils-libelf-devel
 Buildrequires: zlib-devel
-Buildrequires: libgcrypt-devel >= 1.4.5-9.el6_2.1
+Buildrequires: libgcrypt-devel >= 1.4.5-10
 Buildrequires: flex bison
 Buildrequires: libattr-devel libacl-devel libselinux-devel
 Buildrequires: audit-libs-devel >= 1.2.8-2
@@ -47,6 +49,8 @@ checker and intrusion detection program.
 %patch5 -p1
 %patch6 -p1
 %patch7 -p1
+%patch8 -p1
+%patch9 -p1
 
 %build
 %configure --with-config_file=%{_sysconfdir}/aide.conf \
@@ -89,14 +93,17 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
-* Tue Apr 17 2012 Daniel Kopecek <dkopecek@redhat.com> - 0.14-3.2
-- corrected z-stream versioning
+* Wed Jul 16 2014 Daniel Kopecek <dkopecek@redhat.com> - 0.14-7
+Corrected bogus dates in spec file changelog entries
 
-* Mon Apr 16 2012 Daniel Kopecek <dkopecek@redhat.com> - 0.14-3.1
-- corrected BuildRequires
+* Wed Jul 16 2014 Daniel Kopecek <dkopecek@redhat.com> - 0.14-6
+resolves: #1119759 - aide segfaults while processing report_attributes
 
-* Fri Apr 13 2012 Daniel Kopecek <dkopecek@redhat.com> - 0.14-3
-resolves: #811929 aide doesn't initialize its database when FIPS is enabled
+* Wed May 21 2014 Daniel Kopecek <dkopecek@redhat.com> - 0.14-5
+resolves: #806911 - aide should handle the situation when 'prelink' is not installed
+
+* Wed Apr 11 2012 Daniel Kopecek <dkopecek@redhat.com> - 0.14-4
+resolves: #574770 aide doesn't initialize its database when FIPS is enabled
 
 * Tue May 18 2010 Steve Grubb <sgrubb@redhat.com> - 0.14-3
 resolves: #590561 aide does not detect the change of SElinux context
@@ -196,7 +203,7 @@ resolves: #567668 rebase to new upstream release
 - old Russian man pages not available anymore.
 - disable static linking.
 
-* Fri Apr  7 2005 Michael Schwendt <mschwendt[AT]users.sf.net>
+* Thu Apr  7 2005 Michael Schwendt <mschwendt[AT]users.sf.net>
 - rebuilt
 
 * Fri Nov 28 2003 Michael Schwendt <mschwendt[AT]users.sf.net> - 0:0.10-0.fdr.1
